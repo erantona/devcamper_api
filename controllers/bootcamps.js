@@ -2,21 +2,21 @@
 // @route GET => /api/v1/bootcamps
 // @access Public
 exports.getBootcamps = (req, res, next) => {
-  res.status(400).json({ sucess: true, msg: 'Show all bootcampss' });
+  res.status(200).json({ sucess: true, msg: 'Show all bootcampss' });
 };
 
 // @desc Get single bootcamps
 // @route GET => /api/v1/bootcamps/:id
 // @access Public
 exports.getBootcamp = (req, res, next) => {
-  res.status(400).json({ sucess: true, msg: `Get bootcam ${req.params.id}` });
+  res.status(200).json({ sucess: true, msg: `Get bootcamp ${req.params.id}` });
 };
 
 // @desc Create new bootcamps
 // @route POST => /api/v1/bootcamps/
 // @access Private
 exports.createBootcamp = (req, res, next) => {
-  res.status(400).json({ sucess: true, msg: 'Create new bootcamps' });
+  res.status(200).json({ sucess: true, msg: 'Create new bootcamps' });
 };
 
 // @desc Update new bootcamps
@@ -24,8 +24,8 @@ exports.createBootcamp = (req, res, next) => {
 // @access Private
 exports.updateBootcamp = (req, res, next) => {
   res
-    .status(400)
-    .json({ sucess: true, msg: `Update bootcam ${req.params.id}` });
+    .status(200)
+    .json({ sucess: true, msg: `Update bootcamp ${req.params.id}` });
 };
 
 // @desc Delete new bootcamps
@@ -33,6 +33,6 @@ exports.updateBootcamp = (req, res, next) => {
 // @access Private
 exports.deleteBootcamp = (req, res, next) => {
   res
-    .status(400)
-    .json({ sucess: true, msg: `Delete bootcam ${req.params.id}` });
+    .status(200)
+    .json({ sucess: true, msg: `Delete bootcamp ${req.params.id}` });
 };
