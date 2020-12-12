@@ -18,11 +18,14 @@ const advancedResults = require('../middleware/advancedResults');
 
 // Include Other Resourses
 const courseRouter = require('./courses');
+const reviewRouter = require('./reviews');
 
 const router = express.Router();
 
 // Re-route into other resourses router
 router.use('/:bootcampId/courses', courseRouter);
+router.use('/:bootcampId/reviews', reviewRouter);
+
 router
   .route('/')
   .get(

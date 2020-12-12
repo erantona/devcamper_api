@@ -21,7 +21,7 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
       new ErrorResponse(`Bootcamp not found id of ${req.params.id}`, 404)
     );
   }
-  res.status(200).json({ sucess: true, data: bootcamp });
+  res.status(200).json({ success: true, data: bootcamp });
 });
 
 // @desc Create new bootcamps
@@ -44,7 +44,7 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
 
   const bootcamp = await Bootcamp.create(req.body);
   res.status(201).json({
-    sucess: true,
+    success: true,
     data: bootcamp,
   });
 });
@@ -77,7 +77,7 @@ exports.updateBootcamp = asyncHandler(async (req, res, next) => {
     runValidators: true,
   });
 
-  res.status(200).json({ sucess: true, data: bootcamp });
+  res.status(200).json({ success: true, data: bootcamp });
 });
 
 // @desc Delete new bootcamps
@@ -100,7 +100,7 @@ exports.deleteBootcamp = asyncHandler(async (req, res, next) => {
     );
   }
   bootcamp.remove();
-  res.status(200).json({ sucess: true, data: {} });
+  res.status(200).json({ success: true, data: {} });
 });
 
 // @desc Find by distance and zipcode
@@ -119,7 +119,7 @@ exports.getBootcampsByDist = asyncHandler(async (req, res, next) => {
   });
 
   res.status(200).json({
-    sucess: true,
+    success: true,
     count: bootcamps.length,
     data: bootcamps,
   });

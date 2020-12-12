@@ -12,7 +12,7 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
     const courses = await Course.find({ bootcamp: req.params.bootcampId });
 
     return res.status(200).json({
-      sucess: true,
+      success: true,
       count: courses.length,
       data: courses,
     });
@@ -34,7 +34,7 @@ exports.getCourse = asyncHandler(async (req, res, next) => {
   }
 
   res.status(200).json({
-    sucess: true,
+    success: true,
     data: course,
   });
 });
@@ -59,7 +59,7 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
     return next(
       new ErrorResponse(
         `This user with id ${req.user.id} is not authorized to add a course to bootcamp ${req.params.bootcampId}`,
-        400
+        401
       )
     );
   }
@@ -67,7 +67,7 @@ exports.addCourse = asyncHandler(async (req, res, next) => {
   const course = await Course.create(req.body);
 
   res.status(201).json({
-    sucess: true,
+    success: true,
     data: course,
   });
 });
@@ -87,7 +87,7 @@ exports.updateCourse = asyncHandler(async (req, res, next) => {
     return next(
       new ErrorResponse(
         `This user with id ${req.user.id} is not authorized to update the course`,
-        400
+        401
       )
     );
   }
@@ -98,7 +98,7 @@ exports.updateCourse = asyncHandler(async (req, res, next) => {
   });
 
   res.status(200).json({
-    sucess: true,
+    success: true,
     data: course,
   });
 });
@@ -119,7 +119,7 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
     return next(
       new ErrorResponse(
         `This user with id ${req.user.id} is not authorized to delete the course`,
-        400
+        401
       )
     );
   }
@@ -127,7 +127,7 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
   await course.remove();
 
   res.status(200).json({
-    sucess: true,
+    success: true,
     data: {},
   });
 });

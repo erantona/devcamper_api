@@ -68,7 +68,6 @@ const advancedResults = (model, populate) => async (req, res, next) => {
       limit,
     };
   }
-  console.log('called======');
 
   res.advancedResults = {
     success: true,
